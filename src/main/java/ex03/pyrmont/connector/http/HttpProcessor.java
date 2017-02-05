@@ -14,9 +14,13 @@ import java.net.Socket;
 /* this class used to be called HttpServer */
 public class HttpProcessor {
 
-  public HttpProcessor(HttpConnector connector) {
-    this.connector = connector;
-  }
+  protected String method = null;
+  protected String queryString = null;
+  /**
+   * The string manager for this package.
+   */
+  protected StringManager sm =
+    StringManager.getManager("ex03.pyrmont.connector.http");
   /**
    * The HttpConnector with which this processor is associated.
    */
@@ -25,14 +29,9 @@ public class HttpProcessor {
   private HttpRequestLine requestLine = new HttpRequestLine();
   private HttpResponse response;
 
-  protected String method = null;
-  protected String queryString = null;
-
-  /**
-   * The string manager for this package.
-   */
-  protected StringManager sm =
-    StringManager.getManager("ex03.pyrmont.connector.http");
+  public HttpProcessor(HttpConnector connector) {
+    this.connector = connector;
+  }
 
   public void process(Socket socket) {
     SocketInputStream input = null;

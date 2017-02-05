@@ -571,10 +571,10 @@ public class WebdavServlet
                 if ((object instanceof DirContext) && (depth > 0)) {
 
                     try {
-                        NamingEnumeration enum = resources.list(currentPath);
-                        while (enum.hasMoreElements()) {
+                        NamingEnumeration e = resources.list(currentPath);
+                        while (e.hasMoreElements()) {
                             NameClassPair ncPair =
-                                (NameClassPair) enum.nextElement();
+                                (NameClassPair) e.nextElement();
                             String newPath = currentPath;
                             if (!(newPath.endsWith("/")))
                                 newPath += "/";
@@ -1667,9 +1667,9 @@ public class WebdavServlet
             }
 
             try {
-                NamingEnumeration enum = resources.list(source);
-                while (enum.hasMoreElements()) {
-                    NameClassPair ncPair = (NameClassPair) enum.nextElement();
+                NamingEnumeration e = resources.list(source);
+                while (e.hasMoreElements()) {
+                    NameClassPair ncPair = (NameClassPair) e.nextElement();
                     String childDest = dest;
                     if (!childDest.equals("/"))
                         childDest += "/";
@@ -1844,17 +1844,17 @@ public class WebdavServlet
         if (lockTokenHeader == null)
             lockTokenHeader = "";
 
-        Enumeration enum = null;
+        Enumeration e = null;
         try {
-            enum = resources.list(path);
+            e = resources.list(path);
         } catch (NamingException e) {
             errorList.put(path, new Integer
                 (WebdavStatus.SC_INTERNAL_SERVER_ERROR));
             return;
         }
 
-        while (enum.hasMoreElements()) {
-            NameClassPair ncPair = (NameClassPair) enum.nextElement();
+        while (e.hasMoreElements()) {
+            NameClassPair ncPair = (NameClassPair) e.nextElement();
             String childName = path;
             if (!childName.equals("/"))
                 childName += "/";

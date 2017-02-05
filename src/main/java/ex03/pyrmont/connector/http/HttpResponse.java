@@ -464,7 +464,6 @@ public class HttpResponse implements HttpServletResponse {
     return writer;
   }
 
-    @Override
     public void setCharacterEncoding (String s)
     {
         //To change body of implemented methods use File | Settings | File Templates.
@@ -572,5 +571,21 @@ public class HttpResponse implements HttpServletResponse {
   }
 
   public void setStatus(int sc, String message) {
+  }
+
+  public int getStatus() {
+    return 0;
+  }
+
+  public String getHeader(String name) {
+    return null;
+  }
+
+  public Collection<String> getHeaders(String name) {
+    return null;
+  }
+
+  public Collection<String> getHeaderNames() {
+    return null;
   }
 }
