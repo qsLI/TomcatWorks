@@ -58,3 +58,41 @@ fabric.properties
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+src/main/resources/
+src/test/
+target/classes/SimpleServletContainer/
+target/classes/SimpleSocket/
+target/classes/SimpleSocketServer/
+target/classes/com/
+target/classes/ex01/
+target/classes/ex02/
+target/classes/ex03/pyrmont/startup/
+target/classes/ex04/
+target/classes/ex05/
+target/classes/ex06/
+target/classes/ex07/
+target/classes/ex08/
+target/classes/ex09/
+target/classes/ex10/
+target/classes/ex11/
+target/classes/ex13/
+target/classes/ex14/
+target/classes/ex15/
+target/classes/ex16/
+target/classes/ex20/
+target/classes/test/
+target/generated-sources/
+### Maven template
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Exclude maven wrapper
+!/.mvn/wrapper/maven-wrapper.jar
+
